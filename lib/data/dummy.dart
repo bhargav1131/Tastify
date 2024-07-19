@@ -5,12 +5,12 @@ const availableCategories = [
   Category(
     id: 'c1',
     title: 'Italian',
-    color: Colors.purple,
+    color: Color.fromARGB(255, 185, 77, 204),
   ),
   Category(
     id: 'c2',
     title: 'Quick & Easy',
-    color: Colors.red,
+    color: Color.fromARGB(255, 219, 58, 47),
   ),
   Category(
     id: 'c3',
