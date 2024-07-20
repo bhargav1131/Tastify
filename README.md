@@ -1,16 +1,33 @@
-# tastify
+# Tastify - A Recipe App
 
-A new Flutter project.
+A Flutter-based recipe application to browse, search, and save recipes. 
+
+## Features
+
+- Browse and search recipes
+- View recipe details
+- Save favorite recipes
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. **Clone the Repo**
+   ```bash
+    git clone https://github.com/bhargav1131/Tastify
+   ```
 
-A few resources to get you started if this is your first Flutter project:
+2. **Install Dependencies**
+    ```bash
+    flutter pub get
+    ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+3. **Run the App**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    ```bash
+    flutter run
+    ```
+
+## Contributing
+
+Feel free to fork and submit pull requests!
+
+(*will upload a few screenshots soon*)
