@@ -2,14 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:tastify/models/category_mod.dart';
 
 class GridItem extends StatelessWidget {
-  const GridItem({super.key, required this.category});
+  const GridItem({
+    super.key, 
+    required this.category, 
+    required this.onSelectCategory
+  });
 
   final Category category;
+  final void Function() onSelectCategory;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){},
+      onTap: onSelectCategory,
       splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(16),
       child: Container(
@@ -17,13 +22,13 @@ class GridItem extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             gradient: LinearGradient(
-          colors: [
-            category.color.withOpacity(0.60),
-            category.color.withOpacity(0.90),
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        )),
+              colors: [
+                category.color.withOpacity(0.60),
+                category.color.withOpacity(0.90),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            )),
         child: Text(
           category.title,
           style: Theme.of(context).textTheme.titleLarge!.copyWith(
