@@ -8,6 +8,8 @@ import 'package:tastify/widgets/main_drawer.dart';
 class TabScreen extends StatefulWidget{
   const TabScreen({super.key});
 
+
+
   @override
   State <TabScreen> createState(){
     return _TabScreenState();
@@ -17,6 +19,14 @@ class TabScreen extends StatefulWidget{
 class _TabScreenState extends State<TabScreen>{
   int _selectedPageIndex = 0;
   final List<Meal> _favoriteMeals = [];
+
+  void _setScreen(String identifier){
+    if(identifier == 'Filters'){
+      
+    } else{
+      Navigator.of(context).pop();
+    }
+  }
 
   void _showClickMessage(String message){
     ScaffoldMessenger.of(context).clearSnackBars();
@@ -63,8 +73,9 @@ class _TabScreenState extends State<TabScreen>{
       appBar: AppBar(
         title: Text(activePageTitle),
       ),
-      drawer:const MainDrawer(),
-      body: activePage,
+      drawer:MainDrawer(
+        onSelectScreen: _setScreen,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
         currentIndex: _selectedPageIndex,
