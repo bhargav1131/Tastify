@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class MainDrawer extends StatelessWidget{
   const MainDrawer({super.key});
@@ -29,6 +30,20 @@ class MainDrawer extends StatelessWidget{
                 ),),
               ],
             ),
+          ),
+
+          ListTile(
+            leading: Icon(Icons.restaurant, size: 26, color: Theme.of(context).colorScheme.onSurface ),
+            title: Text('Meals', style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface, fontSize: 23),),
+            onTap: (){},       
+          ),
+
+          ListTile(
+            leading: Icon(Icons.settings, size: 26, color: Theme.of(context).colorScheme.onSurface ),
+            title: Text('Filters', style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface, fontSize: 23),),
+            onTap: (){},       
           ),
         ],
       ),
