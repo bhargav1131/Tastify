@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:tastify/data/dummy.dart';
 import 'package:tastify/models/category_mod.dart';
-// import 'package:tastify/models/meal_mod.dart';
+import 'package:tastify/models/meal_mod.dart';
 import 'package:tastify/screens/meals.dart';
 import 'package:tastify/widgets/grid_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key});
+  const CategoriesScreen({super.key, required this.onToogleFav});
+
+  final void Function(Meal meal) onToogleFav;
 
   void _selectCategory(BuildContext context, Category category) {
     // look upon this
@@ -15,7 +17,7 @@ class CategoriesScreen extends StatelessWidget {
 
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (ctx) => MealsScreen(title: category.title, meals: filteredMeals),
+        builder: (ctx) => MealsScreen(title: category.title, meals: filteredMeals,onToggleFavorites: onToogleFav ,),
       ),
     );
   }

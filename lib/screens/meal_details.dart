@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:tastify/models/meal_mod.dart';
 
 class MealDetailsScreen extends StatelessWidget {
-  const MealDetailsScreen({super.key, required this.meal});
+  const MealDetailsScreen({super.key, required this.meal, required this.onTogglefavorites});
+
+  final void Function(Meal meal) onTogglefavorites;
 
   final Meal meal;
 
@@ -12,7 +14,9 @@ class MealDetailsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(meal.title),
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.star),),
+          IconButton(onPressed: (){
+            onTogglefavorites;
+          }, icon: Icon(Icons.star),),
         ],
       ),
       body: SingleChildScrollView(
