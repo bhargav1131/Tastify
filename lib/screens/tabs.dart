@@ -21,10 +21,11 @@ class _TabScreenState extends State<TabScreen>{
   int _selectedPageIndex = 0;
   final List<Meal> _favoriteMeals = [];
 
-  void _setScreen(String identifier){
+  void _setScreen(String identifier) async{
     if(identifier == 'Filters'){
       Navigator.of(context).pop();
-      Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=> const FiltersScreen()));
+      final result = await Navigator.of(context).push<Map<Filter, bool>>(MaterialPageRoute(builder: (ctx)=> const FiltersScreen()));
+      
     } else{
       Navigator.of(context).pop();
     }
