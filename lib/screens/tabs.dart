@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tastify/screens/category.dart';
+import 'package:tastify/screens/filters.dart';
 import 'package:tastify/screens/meals.dart';
 import 'package:tastify/models/meal_mod.dart';
 import 'package:tastify/widgets/main_drawer.dart';
@@ -22,7 +23,7 @@ class _TabScreenState extends State<TabScreen>{
 
   void _setScreen(String identifier){
     if(identifier == 'Filters'){
-      
+      Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=> const FiltersScreen()));
     } else{
       Navigator.of(context).pop();
     }
@@ -76,6 +77,7 @@ class _TabScreenState extends State<TabScreen>{
       drawer:MainDrawer(
         onSelectScreen: _setScreen,
       ),
+      
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
         currentIndex: _selectedPageIndex,
