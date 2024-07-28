@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tastify/screens/tabs.dart';
-import 'package:tastify/widgets/main_drawer.dart';
 
 enum Filter{
   glutenFree,
@@ -30,12 +28,12 @@ class _FiltersScreenState extends State<FiltersScreen>{
       appBar: AppBar(
         title: const Text('Your Filters'),
       ),
-      drawer: MainDrawer(onSelectScreen: (identifier){
-        Navigator.of(context).pop();
-        if(identifier == 'Meals'){
-          Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=> const TabScreen()));
-        }
-      }),
+      // drawer: MainDrawer(onSelectScreen: (identifier){
+      //   Navigator.of(context).pop();
+      //   if(identifier == 'Meals'){
+      //     Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=> const TabScreen()));
+      //   }
+      // }),
       body: PopScope(
         canPop: false,
         onPopInvoked: (didPop){
