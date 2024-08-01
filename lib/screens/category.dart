@@ -6,13 +6,14 @@ import 'package:tastify/screens/meals.dart';
 import 'package:tastify/widgets/grid_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key, required this.onToogleFav});
+  const CategoriesScreen({super.key, required this.onToogleFav, required this.availableMeals});
 
   final void Function(Meal meal) onToogleFav;
+  final List<Meal> availableMeals;
 
   void _selectCategory(BuildContext context, Category category) {
     // look upon this
-    final filteredMeals = dummyMeals.where((meal) => meal.categories.contains(category.id)).toList();
+    final filteredMeals = availableMeals.where((meal) => meal.categories.contains(category.id)).toList();
     
 
     Navigator.of(context).push(
