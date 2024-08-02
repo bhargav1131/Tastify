@@ -6,6 +6,7 @@ import 'package:tastify/screens/filters.dart';
 import 'package:tastify/screens/meals.dart';
 import 'package:tastify/widgets/main_drawer.dart';
 import 'package:tastify/provider/favorites_provider.dart';
+import 'package:tastify/provider/filters_provider.dart';
 
 const kInitialFilters = {
   Filter.glutenFree: false,
