@@ -4,7 +4,7 @@ import 'package:tastify/models/meal_mod.dart';
 class FavoriteMealsNotifier extends StateNotifier<List<Meal>>{
   FavoriteMealsNotifier(): super([]);
 
-  void _toggleMealFavoriteStatus(Meal meal){
+  void toggleMealFavoriteStatus(Meal meal){
     final mealIsFavorite = state.contains(meal);
 
     if(mealIsFavorite){
@@ -15,6 +15,6 @@ class FavoriteMealsNotifier extends StateNotifier<List<Meal>>{
   }
 }
 
-final favoriteMealsProvider = StateNotifierProvider((ref){
+final favoriteMealsProvider = StateNotifierProvider<FavoriteMealsNotifier, List<Meal>>((ref){
   return FavoriteMealsNotifier();
 });
